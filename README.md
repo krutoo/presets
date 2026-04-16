@@ -63,3 +63,7 @@ For build your package via `tsc -p tsconfig.build.json`:
 ```
 
 This preset will try to build from `src` folder to `dist` folder.
+
+### To Do
+
+- `bin` to use like `npx presets --init --all` for automatically create config files

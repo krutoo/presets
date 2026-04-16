@@ -1,15 +1,16 @@
 {
   "extends": "./tsconfig.check.json",
   "compilerOptions": {
-    // project
-    "rootDir": "${configDir}/src",
+    // project:
+    "rootDir": "${configDir}/src", // build only src folder
 
-    // emit
+    // emit:
     "noEmit": false,
     "outDir": "${configDir}/dist",
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true
   },
-  "include": ["${configDir}/src"]
+  "include": ["${configDir}/src"], // build only src folder
+  "exclude": ["**/node_modules", "${configDir}/dist", "**/*.{test,spec}.*"] // exclude from build dependencies, tests and compilation result
 }

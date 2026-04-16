@@ -1,38 +1,38 @@
 {
   "compilerOptions": {
-    // project
-    "rootDir": "${configDir}",
+    // project:
+    "rootDir": "${configDir}", // check all files in directory where your tsconfig placed
     "target": "esnext",
-    "module": "nodenext",
+    "module": "nodenext", // for ability to run compiled code directly in Node.js (without bundlers)
     "types": ["node"],
     "lib": ["ESNext", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
-    "jsx": "react-jsx",
+    "jsx": "react-jsx", // targets to modern React with automatic JSX runtime
 
-    // emit
+    // emit:
     "noEmit": true,
-    "outDir": "${configDir}/dist",
+    "outDir": "${configDir}/dist", // compiled files will be in dist folder
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true,
-    "rewriteRelativeImportExtensions": true,
+    "rewriteRelativeImportExtensions": true, // compiled code will have correct paths (`import './a.ts'` >> `import './a.js'`)
 
-    // code style
+    // code style:
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "forceConsistentCasingInFileNames": true,
 
-    // recommended
+    // recommended:
     "strict": true,
     "moduleDetection": "force",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
+    "noUncheckedSideEffectImports": true, // ban import some side effect without type declaration
     "noUncheckedIndexedAccess": true,
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "erasableSyntaxOnly": true,
-    "isolatedDeclarations": true
+    "allowImportingTsExtensions": true, // for ability to have correct import paths
+    "verbatimModuleSyntax": true, // requires to import types with `type` keyword
+    "erasableSyntaxOnly": true, // no enums, namespaces, parameter properties, etc.
+    "isolatedDeclarations": true // make code comply with the "no-slow-types" rule from JSR
   },
   "exclude": ["**/node_modules", "${configDir}/dist"]
 }
