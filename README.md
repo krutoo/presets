@@ -5,7 +5,7 @@ Set of presets for format/lint/test/build etc.
 ## Install
 
 ```sh
-npm add @krutoo/presets
+npm add -D @krutoo/presets
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ export { default } from '@krutoo/presets/prettier';
 
 When using JSON:
 
-```json
+```jsonc
 // .prettierrc.json
 "@krutoo/presets/prettier"
 ```
@@ -42,26 +42,26 @@ When using JSON:
 
 For static analysis in your editor/IDE and for `tsc -p . --noEmit`:
 
-```json
+```jsonc
 // tsconfig.json
 {
   "extends": "@krutoo/presets/tsconfig.check.json",
   "compilerOptions": {
-    "rootDir": "."
-  }
+    "rootDir": ".",
+  },
 }
 ```
 
 For build your package via `tsc -p tsconfig.build.json`:
 
-```json
+```jsonc
 // tsconfig.build.json
 {
   "extends": "@krutoo/presets/tsconfig.build.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
   },
-  "include": "src"
+  "include": "src",
 }
 ```
