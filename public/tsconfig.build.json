@@ -2,17 +2,14 @@
   "extends": "./tsconfig.check.json",
   "compilerOptions": {
     // project
-    "rootDir": "src",
-
-    // recommended
-    "allowImportingTsExtensions": false,
+    "rootDir": "${configDir}/src",
 
     // emit
     "noEmit": false,
-    "outDir": "dist",
+    "outDir": "${configDir}/dist",
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true
   },
-  "include": ["src"]
+  "include": ["${configDir}/src"]
 }

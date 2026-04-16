@@ -46,11 +46,12 @@ For static analysis in your editor/IDE and for `tsc -p . --noEmit`:
 // tsconfig.json
 {
   "extends": "@krutoo/presets/tsconfig.check.json",
-  "compilerOptions": {
-    "rootDir": ".",
-  },
 }
 ```
+
+This preset will check all files in your project root, where `tsconfig.json` placed.
+
+---
 
 For build your package via `tsc -p tsconfig.build.json`:
 
@@ -58,10 +59,7 @@ For build your package via `tsc -p tsconfig.build.json`:
 // tsconfig.build.json
 {
   "extends": "@krutoo/presets/tsconfig.build.json",
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-  },
-  "include": "src",
 }
 ```
+
+This preset will try to build from `src` folder to `dist` folder.
