@@ -1,0 +1,6 @@
+{
+  "extends": "./public/tsconfig.check.json",
+  "compilerOptions": {
+    "rootDir": "."
+  }
+}

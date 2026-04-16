@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // project
+    "rootDir": ".",
+    "target": "esnext",
+    "module": "nodenext",
+    "types": ["node"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "DOM.AsyncIterable"],
+    "jsx": "react-jsx",
+
+    // emit
+    "noEmit": true,
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+    "inlineSources": true,
+
+    // code style
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // recommended
+    "strict": true,
+    "moduleDetection": "force",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "noUncheckedIndexedAccess": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "isolatedDeclarations": true
+  },
+  "exclude": ["node_modules", "dist"]
+}
