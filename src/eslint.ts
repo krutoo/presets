@@ -1,4 +1,4 @@
-import { fileURLToPath } from 'node:url';
+import path from 'node:path';
 import { includeIgnoreFile } from '@eslint/compat';
 import pluginJs from '@eslint/js';
 import confusingBrowserGlobals from 'confusing-browser-globals';
@@ -12,7 +12,7 @@ import tseslint from 'typescript-eslint';
 // @todo сделать namespace с отдельными config'ами чтобы можно было точечно подключать?
 // @todo сделать функцию с настройками вроде preset({ gitignore: false, react: false })?
 
-const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
+const gitignorePath = path.resolve(process.cwd(), '.gitignore');
 
 const configs: Config[] = defineConfig([
   // Global ignores
@@ -39,7 +39,7 @@ const configs: Config[] = defineConfig([
       eqeqeq: 'error',
       'no-param-reassign': 'error',
       'no-restricted-globals': ['error', { globals: confusingBrowserGlobals }],
-      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-explicit-any': 'error',
       'no-shadow': 'off',
       '@typescript-eslint/no-shadow': 'error',
       '@typescript-eslint/no-empty-object-type': [
