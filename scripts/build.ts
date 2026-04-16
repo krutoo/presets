@@ -1,8 +1,5 @@
-import { exec } from 'node:child_process';
 import fs from 'node:fs/promises';
-import { promisify } from 'node:util';
-
-const $ = promisify(exec);
+import { $ } from './utils.ts';
 
 // cleanup
 await fs.rm('dist', { recursive: true, force: true });
