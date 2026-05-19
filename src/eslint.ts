@@ -87,8 +87,10 @@ const configs: Config[] = defineConfig([
       ],
 
       // следующие правила отключены тк не позволяют удобно писать хуки
+      'react-hooks/immutability': 'off',
       'react-hooks/refs': 'off',
       'react-hooks/set-state-in-effect': 'off',
+      'react-hooks/use-memo': 'off',
     },
   },
 
