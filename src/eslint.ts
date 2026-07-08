@@ -86,7 +86,7 @@ const configs: Config[] = defineConfig([
         },
       ],
 
-      // следующие правила отключены тк не позволяют удобно писать хуки
+      // next rules are disabled because it downgrades DX of creating components
       'react-hooks/immutability': 'off',
       'react-hooks/refs': 'off',
       'react-hooks/set-state-in-effect': 'off',
@@ -111,16 +111,19 @@ const configs: Config[] = defineConfig([
           checkDestructured: false,
         },
       ],
+      'jsdoc/require-jsdoc': 'error',
+      'jsdoc/tag-lines': 'off',
+
+      // no types required in JSDoc because TS types is preferred
       'jsdoc/require-param-type': 'off',
       'jsdoc/require-property-type': 'off',
       'jsdoc/require-returns-type': 'off',
       'jsdoc/require-yields-type': 'off',
       'jsdoc/require-throws-type': 'off',
-      'jsdoc/tag-lines': 'off',
-      'jsdoc/require-jsdoc': 'error',
     },
   },
   {
+    // no require JSDoc in tests
     files: ['**/*.{test,spec}.{js,mjs,cjs,ts,jsx,tsx}'],
     rules: {
       'jsdoc/require-jsdoc': 'off',
