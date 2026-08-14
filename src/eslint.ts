@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { includeIgnoreFile } from '@eslint/compat';
 import pluginJs from '@eslint/js';
@@ -14,9 +15,11 @@ import tseslint from 'typescript-eslint';
 
 const gitignorePath = path.resolve(process.cwd(), '.gitignore');
 
-const configs: Config[] = defineConfig([
+const configs: Array<Config | Config[] | null> = [
   // Global ignores
-  includeIgnoreFile(gitignorePath, 'Imported .gitignore patterns'),
+  fs.existsSync(gitignorePath)
+    ? includeIgnoreFile(gitignorePath, 'Imported .gitignore patterns')
+    : null,
 
   // Basics
   {
@@ -129,6 +132,8 @@ const configs: Config[] = defineConfig([
       'jsdoc/require-jsdoc': 'off',
     },
   },
-]);
+];
 
-export default configs;
+const preset: Config[] = defineConfig(configs.filter(item => item !== null));
+
+export default preset;
