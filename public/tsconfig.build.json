@@ -12,5 +12,14 @@
     "inlineSources": true
   },
   "include": ["${configDir}/src"], // build only src folder
-  "exclude": ["**/node_modules", "${configDir}/dist", "**/*.{test,spec}.*"] // exclude from build dependencies, tests and compilation result
+
+  // exclude from build dependencies, tests and compilation result
+  "exclude": [
+    "**/node_modules",
+    "${configDir}/dist",
+
+    // IMPORTANT: brackets not supported, so add each test pattern manually
+    "./src/**/*.test.",
+    "./src/**/*.spec."
+  ]
 }
